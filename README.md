@@ -46,7 +46,7 @@
 |控制层 |internal/ctrl/CalculationCtrl.go |请求参数处理，响应 | 调用handler层 被路由层调用    |不可同层调用
 |handler层 |internal/handler/Calculation.go  |处理具体业务 | 调用路由层service层，被控制层调用    |不可同层调用
 |service层   |internal/service/CalculationService.go  |处理业务逻辑 | 调用工具层，被handler层调用    |可同层调用
-| 工具类 |utils  |处理、计算表达式 | 被service层   |可同层调用
+| 工具类 |utils  |处理、计算表达式 | 被service层调用   |可同层调用
 
 #### 4. 存储结构
 
