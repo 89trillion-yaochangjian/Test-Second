@@ -1,19 +1,14 @@
 package service
 
 import (
+	StructInfo "Calculator/internal/structInfo"
 	"Calculator/internal/utils"
-	"fmt"
 )
 
-func CalculationService(str string)int{
-	//判断合法性
-	var res int
-	isLeg := utils.IsLeg(str)
-	if isLeg {
-		Postfix := utils.InfixToPostfix(str)
-		res = utils.Calculation(Postfix)
-	}else {
-		fmt.Println("字符串不合法")
-	}
-	return res
+func CalculationService(str string) (StructInfo.Response, error) {
+	// 中缀表达式转后缀表达式
+	Postfix := utils.InfixToPostfix(str)
+	//计算后缀表达式
+	res, err := utils.Calculation(Postfix)
+	return StructInfo.Response{Data: res}, err
 }
