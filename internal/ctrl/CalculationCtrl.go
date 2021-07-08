@@ -27,8 +27,8 @@ func CalculationCtrl(c *gin.Context) {
 	res, err := handler.CalculationHandler(str)
 	if err != nil {
 		log.Print(err)
-		c.JSON(http.StatusInternalServerError, result.DivisorErr)
+		c.JSON(http.StatusInternalServerError, err)
 		return
 	}
-	c.JSON(http.StatusOK, result.OK.WithData(res.Data))
+	c.JSON(http.StatusOK, result.OK.WithData(res))
 }

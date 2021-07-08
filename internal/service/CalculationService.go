@@ -5,10 +5,13 @@ import (
 	"Calculator/internal/utils"
 )
 
-func CalculationService(str string) (StructInfo.Response, error) {
+func CalculationService(str string) (int, *StructInfo.Response) {
 	// 中缀表达式转后缀表达式
 	Postfix := utils.InfixToPostfix(str)
 	//计算后缀表达式
 	res, err := utils.Calculation(Postfix)
-	return StructInfo.Response{Data: res}, err
+	if err != nil {
+		return res, StructInfo.PostfixErr
+	}
+	return res, nil
 }

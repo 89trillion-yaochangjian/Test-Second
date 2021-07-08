@@ -5,7 +5,7 @@ import (
 	StructInfo "Calculator/internal/structInfo"
 )
 
-func CalculationHandler(str string) (StructInfo.Response, error) {
+func CalculationHandler(str string) (int, *StructInfo.Response) {
 	res, err := service.CalculationService(str)
 	return res, err
 }
