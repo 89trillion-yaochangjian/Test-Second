@@ -5,8 +5,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func CalculationCtrl()  {
+func CalculationCtrl() {
 	r := gin.Default()
-	r.GET("/CalculationCtrl", ctrl.CalculationCtrl)
+	//计算字符串
+	r.POST("/CalculationCtrl", ctrl.CalculationCtrl)
 	r.Run(":8080")
 }

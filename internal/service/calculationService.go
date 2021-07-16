@@ -1,7 +1,7 @@
 package service
 
 import (
-	StructInfo "Calculator/internal/structInfo"
+	StructInfo "Calculator/internal/status"
 	"Calculator/internal/utils"
 )
 
@@ -11,7 +11,7 @@ func CalculationService(str string) (int, *StructInfo.Response) {
 	//计算后缀表达式
 	res, err := utils.Calculation(Postfix)
 	if err != nil {
-		return res, StructInfo.PostfixErr
+		return res, err
 	}
-	return res, nil
+	return res, err
 }

@@ -1,7 +1,7 @@
 package utils
 
 import (
-	StructInfo "Calculator/internal/structInfo"
+	StructInfo "Calculator/internal/status"
 	"strconv"
 )
 
@@ -26,7 +26,7 @@ func Calculation(str string) (int, *StructInfo.Response) {
 				stack.Push(strconv.Itoa(num1 + num2))
 			}
 			if char == "-" {
-				stack.Push(strconv.Itoa(num1 - num2))
+				stack.Push(strconv.Itoa(num2 - num1))
 			}
 			if char == "*" {
 				stack.Push(strconv.Itoa(num1 * num2))

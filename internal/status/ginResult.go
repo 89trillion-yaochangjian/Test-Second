@@ -7,8 +7,7 @@ var (
 	EmptyErr   = response(1001, "字符串不能为空")
 	LegErr     = response(1002, "字符串不合法")
 	DivisorErr = response(1003, "除数不能为零")
-	PostfixErr = response(1004, "计算错误")
-	StrconvErr = response(1005, "数据类型转换异常")
+	StrconvErr = response(1004, "数据类型转换异常")
 )
 
 type Response struct {

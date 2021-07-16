@@ -15,24 +15,23 @@
 ├── go.sum
 ├── internal
 │   ├── ctrl
-│   │   └── CalculationCtrl.go
-│   ├── handler
-│   │   └── Calculation.go
+│   │   └── calculationCtrl.go
 │   ├── router
-│   │   └── CalculationRouter.go
+│   │   └── calculationRouter.go
 │   ├── service
-│   │   ├── CalculationService.go
-│   │   └── CalculationService_test.go
-│   ├── structInfo
+│   │   ├── calculationService.go
+│   │   └── calculationService_test.go
+│   ├── status
 │   │   └── ginResult.go
+│   ├── test
+│   │   ├── locustFile.py
+│   │   └── 压测报告.html
 │   └── utils
-│       ├── Calculation.go
-│       ├── InfixToPostfix.go
-│       ├── IsLeg.go
-│       ├── JudgePpriority.go
-│       └── Stack.go
-├── locustFile.py
-├── report.html
+│       ├── calculate.go
+│       ├── infixToPostfix.go
+│       ├── isLeg.go
+│       ├── judgePpriority.go
+│       └── stack.go
 └── 流程图.png
 
 
@@ -89,5 +88,7 @@ go build
 
 继续优化代码，增加% ^ 等运算符计算
 
+#### 8. 流程图
 
+![fdews](流程图.png "流程图")
 

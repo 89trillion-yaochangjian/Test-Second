@@ -1,30 +1,31 @@
 package ctrl
 
 import (
-	"Calculator/internal/handler"
-	result "Calculator/internal/structInfo"
+	"Calculator/internal/service"
+	result "Calculator/internal/status"
 	"Calculator/internal/utils"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 )
 
+//计算字符串
 func CalculationCtrl(c *gin.Context) {
 	//获取参数
-	str := c.Query("str")
+	str := c.PostForm("str")
 	//判断字符串是否为空
 	if len(str) == 0 {
-		c.JSON(http.StatusInternalServerError, result.EmptyErr)
+		c.JSON(http.StatusBadRequest, result.EmptyErr)
 		return
 	}
 	//判断字符串是否合法
 	isLeg := utils.IsLeg(str)
 	if !isLeg {
-		c.JSON(http.StatusInternalServerError, result.LegErr)
+		c.JSON(http.StatusBadRequest, result.LegErr)
 		return
 	}
 	//计算字符串
-	res, err := handler.CalculationHandler(str)
+	res, err := service.CalculationService(str)
 	if err != nil {
 		log.Print(err)
 		c.JSON(http.StatusInternalServerError, err)

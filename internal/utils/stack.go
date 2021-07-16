@@ -24,6 +24,7 @@ func (s *ItemStack) Push(str string) {
 	defer s.lock.Unlock()
 	s.items = append(s.items, str)
 }
+
 // 获取栈顶元素
 func (s *ItemStack) Top() string {
 	s.lock.Lock()
@@ -35,6 +36,7 @@ func (s *ItemStack) Top() string {
 	str := s.items[len(s.items)-1]
 	return str
 }
+
 // 弹出元素
 func (s *ItemStack) Pop() string {
 	s.lock.Lock()
@@ -49,7 +51,7 @@ func (s *ItemStack) Pop() string {
 }
 
 // IsEmpty 判断栈是否为空
-func (s *ItemStack)IsEmpty() bool {
+func (s *ItemStack) IsEmpty() bool {
 	if len(s.items) == 0 {
 		return true
 	}
