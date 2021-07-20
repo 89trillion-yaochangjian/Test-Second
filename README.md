@@ -69,9 +69,9 @@ Http Post
  http://127.0.0.1:8080/CalculationCtrl
 
 请求参数：
-|字段|   str|
-|类型|  string |
-|描述|  计算字符串 ｜
+字段   str
+类型  string 
+描述  计算字符串
 
 ```
 请求响应
